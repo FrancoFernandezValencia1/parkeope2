@@ -39,4 +39,4 @@ Detalle paso a paso y checklist de seguridad en [`DEPLOY.md`](DEPLOY.md).
 1. Registrar dueño → Wizard nuevo garaje (¿cuánto la hora? ¿día? ¿mes? ¿cuántos entran? ¿qué tipos?).
 2. Crear operador (`POST /api/auth/operador`).
 3. Entrada `POST /api/tickets/in`, salida `POST /api/tickets/out` calcula S/ automáticamente.
-4. Ticket `GET /api/tickets/:id/ticket` se imprime.
+4. Ticket `GET /api/tickets/:id/ticket` se imprime
