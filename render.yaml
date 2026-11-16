@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: parkeope-api
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node src/index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TZ
+        value: America/Lima
+      - key: DATABASE_URL
+        sync: false # pégala de Neon
+      - key: JWT_SECRET
+        generateValue: true # secreto largo automático (o pon el tuyo)
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false # ¡cámbiala! el arranque falla si dejas la default
+      - key: FRONT_URL
+        sync: false # https://tu-sistema.vercel.app,https://tu-admin.vercel.app
+      - key: ALLOW_DEMO_CODES
+        value: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        value: 587
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: SMTP_FROM
+        sync: false
